@@ -1,3 +1,5 @@
+# TO-DO LIST
+
 Activity = []
 
 while True:
@@ -11,28 +13,32 @@ while True:
         print("Activity added!")
 
     elif selection == "2":
-        if Activity :
+        if Activity:
             print("\nYour To-Do List:")
             index = 1  # Manual index
             for task in Activity:
-                print(f"{index}.{Activity}")
-                index += 1  # Increment index manually
+                print(f"{index}. {task}")  
+                index += 1  
         else:
             print("No Activity yet!")
 
     elif selection == "3":
         if Activity:
-            index = 1  # Manual index
-            for Activity in Activity:
-                print(f"{index}. {Activity}")
+            index = 1 
+            for task in Activity:  
+                print(f"{index}. {task}")  
                 index += 1
 
-            Activity_num = int(input("Enter Activity number to remove: "))
-            if 1 <=Activity_num <= len(Activity):
-                Activity.pop(Activity_num - 1)
-                print("Activity removed!")
-            else:
-                print("Invalid number!")
+          
+                Activity_num = int(input("Enter Activity number to remove: "))
+                if 1 <= Activity_num <= len(Activity): 
+                    
+                    removed_activity = Activity.pop(Activity_num - 1)
+
+                    print(f"Activity '{removed_activity}' removed!")
+                else:
+                    print("Invalid number!")
+            
         else:
             print("No Activity to remove!")
 
@@ -41,4 +47,4 @@ while True:
         break
 
     else:
-        print("Invalid selection! Tryagain.")
+        print("Invalid selection! Try again.")  
